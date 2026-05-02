@@ -226,6 +226,150 @@
             border-top: 1px solid #e0e0e0;
             margin-top: 48px;
         }
+
+        .theme-toggle-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--primary);
+        }
+
+        .theme-selector.hidden {
+            display: none;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 24px 0;
+                margin-bottom: 24px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+                margin-bottom: 4px;
+            }
+
+            .header p {
+                font-size: 14px;
+                margin-bottom: 16px;
+            }
+
+            .theme-toggle-btn {
+                display: block;
+            }
+
+            .theme-selector {
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+
+            .theme-btn {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+
+            .glass {
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            .converter-tabs-header {
+                gap: 12px;
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid #f0f0f0;
+            }
+
+            .tab-btn {
+                font-size: 12px;
+                padding: 6px 0;
+            }
+
+            .tab-btn::after {
+                bottom: -14px;
+                height: 2px;
+            }
+
+            .converter-section {
+                padding: 16px;
+                margin-bottom: 16px;
+            }
+
+            .converter-section label {
+                font-size: 12px;
+                margin-bottom: 6px;
+            }
+
+            input[type="number"],
+            select,
+            textarea {
+                padding: 14px 12px;
+                font-size: 16px;
+            }
+
+            button[id*="ConvertBtn"] {
+                padding: 14px 20px;
+                font-size: 14px;
+                margin-top: 12px;
+            }
+
+            .result-box {
+                padding: 14px;
+                margin-top: 12px;
+            }
+
+            .result-box p {
+                font-size: 13px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .footer {
+                padding: 20px 0;
+                font-size: 12px;
+                margin-top: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 12px;
+            }
+
+            .glass {
+                padding: 16px;
+            }
+
+            .converter-tabs-header {
+                gap: 8px;
+            }
+
+            .tab-btn {
+                font-size: 11px;
+                padding: 4px 0;
+            }
+
+            .converter-section {
+                padding: 14px;
+            }
+
+            input[type="number"],
+            select,
+            textarea {
+                padding: 12px 10px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -235,6 +379,7 @@
         <div class="container">
             <h1>OmniConvert</h1>
             <p>The Universal Unit & Currency Converter</p>
+            <button class="theme-toggle-btn" id="themeToggleBtn">Themes</button>
             <div class="theme-selector" id="themeSelector"></div>
         </div>
     </div>

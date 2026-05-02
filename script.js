@@ -346,7 +346,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // Theme Selector Setup
 function initializeThemeSelector() {
     const selector = document.getElementById('themeSelector');
+    const toggleBtn = document.getElementById('themeToggleBtn');
     if (!selector) return;
+    
+    // Hide theme selector on mobile by default
+    if (window.innerWidth <= 768) {
+        selector.classList.add('hidden');
+    }
+    
+    // Theme toggle button for mobile
+    if (toggleBtn) {
+        toggleBtn.onclick = () => {
+            selector.classList.toggle('hidden');
+        };
+    }
     
     Object.keys(THEMES).forEach(themeId => {
         const themeName = themeId.charAt(0).toUpperCase() + themeId.slice(1);
@@ -357,6 +370,10 @@ function initializeThemeSelector() {
             document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             setTheme(themeId);
+            // Close theme selector on mobile after selection
+            if (window.innerWidth <= 768) {
+                selector.classList.add('hidden');
+            }
         };
         selector.appendChild(btn);
     });
